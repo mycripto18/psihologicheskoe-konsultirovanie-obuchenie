@@ -1,2 +1,2 @@
 User-agent: Yandex
-Sitemap: https://mediator-obuchenie.vercel.app/sitemap.xml
+Sitemap: https://psihologicheskoe-konsultirovanie-obuchenie.vercel.app/sitemap.xml
