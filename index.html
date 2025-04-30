@@ -11,6 +11,8 @@
     <title>Обучение Психологическому Консультированию в 2025: [ТОП-15] лучших дистанционных курсов повышения квалификации и переподготовки</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/png" href="favicon.png">
+<!-- для всплывашки  --> <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -881,7 +883,71 @@ p>Дистанционное обучение позволяет осваива�
         <p>Сайт не оказывает и не продает услуги. Вся информация носит исключительно информационный характер.</p>
         <p><a href="https://psihologicheskoe-konsultirovanie-obuchenie.vercel.app/politika.html">Политика конфиденциальности</a></p>
     </footer>
+      <!-- Вплывашка с политикой  --> 
     
+   <!-- Cookie-баннер -->
+<div id="cookie-consent" class="cookie-bar">
+    <div class="cookie-text">
+      Сайт использует сервис веб-аналитики
+      <a href="#" id="yandex-link">Яндекс Метрика</a>
+      с помощью технологии «cookie», чтобы пользоваться сайтом было удобнее.
+      Вы можете запретить обработку cookies в настройках браузера. Подробнее в <a href="#">Политике</a>
+    </div>
+    <button class="cookie-btn" onclick="acceptCookieConsent()">Я согласен</button>
+  </div>
+  
+  <!-- Модальное окно -->
+  <div id="modal-overlay">
+    <div id="modal-window">
+      <span id="modal-close">&times;</span>
+      <div class="modal-title">Яндекс Метрика</div>
+      <div class="modal-content">
+  Этот сайт использует сервис веб-аналитики Яндекс Метрика, предоставляемый компанией ООО «ЯНДЕКС», 119021, Россия, Москва, ул. Л. Толстого, 16 (далее - Яндекс).<br><br>
+  Сервис Яндекс Метрика использует технологию «cookie».<br><br>
+  Собранная при помощи cookie информация не может идентифицировать вас, однако может помочь нам улучшить работу нашего сайта. Информация об использовании вами данного сайта будет передаваться и храниться на сервере Яндекса в Российской Федерации. Яндекс будет обрабатывать эту информацию с целью анализа пользовательской активности.<br><br>
+  Вы можете отказаться от использования cookies, выбрав соответствующие настройки в браузере. Используя этот сайт, вы соглашаетесь на обработку данных о вас Яндексом в порядке и целях, указанных выше.
+      </div>
+    </div>
+  </div>
+  
+    
+       <!-- Скрипт Вплывашка с политикой  --> 
+    
+       <script>  // Cookie-баннер
+       function acceptCookieConsent() {
+  document.getElementById('cookie-consent').style.display = 'none';
+  localStorage.setItem('cookieConsent', 'accepted');
+}
+
+// Проверяем, давал ли уже пользователь согласие
+window.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('cookieConsent') === 'accepted') {
+    document.getElementById('cookie-consent').style.display = 'none';
+  } else {
+    document.getElementById('cookie-consent').style.display = '';
+  }
+});
+
+// Модалка Яндекс Метрика
+const yandexLink = document.getElementById('yandex-link');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+
+yandexLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  modalOverlay.style.display = 'flex';
+});
+modalClose.addEventListener('click', function() {
+  modalOverlay.style.display = 'none';
+});
+modalOverlay.addEventListener('click', function(e) {
+  if (e.target === modalOverlay) {
+    modalOverlay.style.display = 'none';
+  }
+});
+
+    </script>
+ <!-- Конец Скрипта Вплывашка с политикой  --> 
     <script>
         function getLastMonday() {
             let now = new Date();
