@@ -212,3 +212,155 @@ footer a {
 footer a:hover {
     color: #0056b3;
 }
+ /* Вплывашка окно */
+
+:root {
+    --accent: #4476fa;
+    --border-radius: 11px;
+    --font-main: 'Inter', Arial, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-main);
+  }
+  
+  /* Cookie-баннер */
+  .cookie-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 0;
+    z-index: 10000;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,0.08), 0 2px 32px 0 rgba(0,0,0,0.08);
+  }
+  
+  .cookie-text {
+    max-width: 1050px;
+    flex: 1 1 auto;
+    text-align: left;
+    margin-left: 8%;
+    margin-right: 2vw;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  
+  .cookie-text a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.18s;
+  }
+  .cookie-text a:hover {
+    color: #f8c62c;
+  }
+  
+  .cookie-btn {
+    padding: 12px 34px;
+    font-size: 17px;
+    background: #fff;
+    color: var(--accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--font-main);
+    transition: background 0.17s, color 0.17s, box-shadow 0.17s;
+    box-shadow: 0 2px 12px rgba(68,118,250,.13);
+  }
+  .cookie-btn:hover {
+    background: #f5f7fa;
+    color: #32589e;
+  }
+  
+  /* Модальное окно */
+  #modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 11000;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(18, 21, 38, 0.35);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #modal-window {
+    background: #fff;
+    color: #23263b;
+    max-width: 600px;
+    width: 94vw;
+    margin: 18px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 22px rgba(0,0,0,.11), 0 0 1px rgba(0,0,0,.09);
+    padding: 36px 36px 28px 36px;
+    position: relative;
+    font-size: 18px;
+    font-family: var(--font-main);
+    line-height: 1.68;
+    border: 1px solid #ececf0;
+    animation: modalIn .28s cubic-bezier(.47,1.64,.41,.8);
+  }
+  @keyframes modalIn {
+    0% {transform: translateY(20px) scale(.9); opacity: 0;}
+    100% {transform: none; opacity: 1;}
+  }
+  #modal-close {
+    position: absolute;
+    top: 19px; right: 21px;
+    font-size: 28px;
+    color: #b9bac6;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 600;
+    line-height: 1;
+    transition: color 0.21s;
+  }
+  #modal-close:hover {
+    color: var(--accent);
+  }
+  
+  .modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #23263b;
+    font-family: var(--font-main);
+  }
+  .modal-content {
+    font-size: 16px;
+    color: #3c3c40;
+  }
+  
+  @media (max-width: 900px) {
+    .cookie-text { font-size: 15.5px; margin-left: 2vw; }
+    #modal-window { padding: 28px 12px 17px 18px; font-size: 16px; }
+  }
+  
+  @media (max-width: 600px) {
+    .cookie-bar {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 17px 7vw;
+    }
+    .cookie-text {
+      margin: 0 0 12px 0;
+      width: 100%; max-width: 100%;
+      text-align: left;
+    }
+    .cookie-btn {
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 0;
+    }
+    #modal-window { 
+      padding: 12vw 4vw;
+      font-size: 15.2px;
+    }
+  }
+  
+  
