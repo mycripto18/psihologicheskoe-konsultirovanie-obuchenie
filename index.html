@@ -953,5 +953,21 @@ p>Дистанционное обучение позволяет осваива�
     </footer>
      
 </body>
+	<script>
+  function getLastMonday() {
+    let now = new Date();
+    let day = now.getDay();
+    let diff = now.getDate() - day + (day === 0 ? -6 : 1);
+    let lastMonday = new Date(now.setDate(diff));
+
+    let options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return lastMonday.toLocaleDateString('ru-RU', options);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("update-date").textContent = getLastMonday();
+  });
+</script>
 </html>
+
 
